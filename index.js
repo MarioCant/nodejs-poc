@@ -13,7 +13,22 @@ app.get('/', function(req, res){
 
   res.send( users );
 
+}).get( '/user/:id', function( req, res) {
+
+  var users = require( './users.json');
+
+  console.dir( req.params );
+
+  users.forEach( function(user) {
+
+    if( user.id === req.params.id ) {
+      console.log( "FOUND!" );
+      res.send( user );
+    }
+  });
+
 });
+
 
 app.listen(3000, function() {
 
