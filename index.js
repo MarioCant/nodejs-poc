@@ -9,16 +9,23 @@ app.get('/', function(req, res){
 
 app.listen(3000, function() {
 
-  getIPv4interface();
+  getIPv4interface( function(ifc) {
+
+    console.log( "LISTEN TO:", "http://" + ifc.address + ":3000"  );
+
+  });
+
 
 });
 
 
-function getNetworkInterfaces() {
+function getIPv4interface( cb ) {
   var os = require('os');
   var util = require("util");
 
   var ifaces = os.networkInterfaces();
+
+  var result;
 
   Object.keys(ifaces).forEach(function (ifname) {
 
@@ -26,7 +33,7 @@ function getNetworkInterfaces() {
       console.log( ifname ,":", util.inspect(iface));
 
       if( iface.family==='IPv4' && !iface.internal)
-        console.log( "listen to ", "http://" + iface.address + ":3000"  );
+        cb(iface);
 
     });
   });
