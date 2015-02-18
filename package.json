@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-poc",
+  "version": "1.0.0",
+  "description": "a POC fro NodeJS technology",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/soulsoftware/nodejs-poc.git"
+  },
+  "keywords": [
+    "nodejs",
+    "poc",
+    "soulsoftware"
+  ],
+  "author": "bsorrentino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soulsoftware/nodejs-poc/issues"
+  },
+  "homepage": "https://github.com/soulsoftware/nodejs-poc",
+  "dependencies": {
+    "express": "^4.11.2"
+  }
+}
