@@ -5,6 +5,14 @@ var app = express();
 
 app.get('/', function(req, res){
   res.send('hello world');
+}).get( '/users', function( req, res) {
+
+  var users = require( './users.json');
+
+  console.dir( users );
+
+  res.send( users );
+
 });
 
 app.listen(3000, function() {
